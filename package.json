@@ -46,7 +46,7 @@
     "satori": "^0.10.1",
     "satori-html": "^0.3.2",
     "sharp": "0.32.1",
-    "typescript": "5.0.4",
+    "typescript": "5.1.6",
     "vite-plugin-pwa": "^0.16.4",
     "workbox-cacheable-response": "^7.0.0",
     "workbox-core": "^7.0.0",
