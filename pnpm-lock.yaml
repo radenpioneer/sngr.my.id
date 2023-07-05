@@ -27,8 +27,8 @@ dependencies:
     specifier: 5.0.4
     version: 5.0.4
   '@fontsource/plus-jakarta-sans':
-    specifier: ^5.0.3
-    version: 5.0.3
+    specifier: ^5.0.4
+    version: 5.0.4
   '@keystatic/astro':
     specifier: 0.0.8
     version: 0.0.8(@keystatic/core@0.0.107)(astro@2.7.1)(react-dom@18.2.0)(react@18.2.0)
@@ -2262,8 +2262,8 @@ packages:
     resolution: {integrity: sha512-4RWnlqw1RvGwMk01GTvLZNB2utVdATkTPwrGd+KSkDnMZlpyoHkgmvIlcpsN+/3CaSelVaORZYtYcxm/z8OfkQ==}
     dev: false
 
-  /@fontsource/plus-jakarta-sans@5.0.3:
-    resolution: {integrity: sha512-hOU7pXpXCvtyne6JkaTc+85o2ToOaD4iw74fzqgAo3nYSfcvQu+s9MpPrO37qjNTjUGOdewcUK/+VPFdb0BJkg==}
+  /@fontsource/plus-jakarta-sans@5.0.4:
+    resolution: {integrity: sha512-0dfHplRYc91beLvZItcgrZbHVVC0atsawo1bwXBv0dN7IWkMXyEqsPk2CyyvoPSo1r2635ciZRdtsBE7/Ibmtg==}
     dev: false
 
   /@formatjs/ecma402-abstract@1.15.0:
