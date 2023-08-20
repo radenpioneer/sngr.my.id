@@ -1,0 +1,8 @@
+---
+import { Debug } from 'astro/components'
+import { getPosts } from '~/data/data'
+
+const posts = await getPosts
+---
+
+<Debug {posts} />

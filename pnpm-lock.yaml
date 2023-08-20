@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -140,6 +140,9 @@ dependencies:
   workbox-window:
     specifier: ^7.0.0
     version: 7.0.0
+  wretch:
+    specifier: ^2.6.0
+    version: 2.6.0
 
 packages:
 
@@ -12284,6 +12287,11 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+    dev: false
+
+  /wretch@2.6.0:
+    resolution: {integrity: sha512-7A4TFHSX+cpxxO6Hd4f0ZE9f8wAgO9wRqX3JeOAtHlJy+kdYP+oPjkF1LYmnTSiTMhODR2YWOdMEc4hCCXEw2w==}
+    engines: {node: '>=14'}
     dev: false
 
   /xmlcreate@2.0.4:
