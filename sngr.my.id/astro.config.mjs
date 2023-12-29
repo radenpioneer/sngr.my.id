@@ -11,6 +11,8 @@ export default defineConfig({
   output: 'hybrid',
   adapter: vercel({
     imageService: true,
+    speedInsights: true,
+    webAnalytics: true,
   }),
   image: {
     domains: ['cdn.hashnode.com'],
