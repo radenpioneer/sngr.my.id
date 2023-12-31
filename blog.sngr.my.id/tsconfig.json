@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "baseUrl": "/workspace/sngr.my.id/blog.sngr.my.id",
+    "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
     },

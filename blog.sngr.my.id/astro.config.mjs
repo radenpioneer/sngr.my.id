@@ -18,5 +18,7 @@ export default defineConfig({
     spotlightjs(),
   ],
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({
+    speedInsights: true,
+  }),
 })
