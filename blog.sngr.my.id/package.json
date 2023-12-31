@@ -30,7 +30,7 @@
     "@vite-pwa/astro": "0.1.6",
     "astro": "3.6.4",
     "astro-seo": "0.8.0",
-    "marked": "9.1.6",
+    "marked": "11.1.1",
     "marked-smartypants": "1.1.5",
     "postcss": "8.4.31",
     "postcss-preset-env": "9.3.0",
