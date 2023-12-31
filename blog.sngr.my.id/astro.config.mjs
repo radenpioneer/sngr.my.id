@@ -7,12 +7,7 @@ import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    react(),
-    markdoc(),
-    keystatic(),
-  ],
+  integrations: [tailwind(), react(), markdoc(), keystatic()],
   output: 'hybrid',
   adapter: vercel({
     speedInsights: true,
