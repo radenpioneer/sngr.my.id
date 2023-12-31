@@ -1,17 +1,16 @@
 ---
-import Layout from '~/layout/layout.astro'
-import { getCollection } from 'astro:content'
-import List from '~/components/layout/list'
 
-const posts = await getCollection(
-  'blog',
-  ({ data: post }) =>
-    !post.draft && !post.tags?.some((t) => t.slug === 'catatan-mingguan')
-)
 ---
 
-<Layout>
-  <section class="max-w-screen-lg mx-auto px-4 py-12">
-    <List posts={posts} />
-  </section>
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html>
