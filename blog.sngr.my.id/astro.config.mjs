@@ -20,5 +20,6 @@ export default defineConfig({
   output: 'hybrid',
   adapter: vercel({
     speedInsights: true,
+    imageService: true,
   }),
 })
