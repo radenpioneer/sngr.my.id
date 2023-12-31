@@ -1,9 +1,11 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/workspace/sngr.my.id/blog.sngr.my.id",
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
