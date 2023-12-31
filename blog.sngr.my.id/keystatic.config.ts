@@ -50,6 +50,11 @@ export default config({
           directory: 'src/assets/posts',
           publicPath: '~/assets/posts',
         }),
+        draft: fields.checkbox({ label: 'Draft', defaultValue: true }),
+        hidden: fields.checkbox({
+          label: 'Hide this post',
+          defaultValue: false,
+        }),
         content: fields.document({
           label: 'Content',
           formatting: true,

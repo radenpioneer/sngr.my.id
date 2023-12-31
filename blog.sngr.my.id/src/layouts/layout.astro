@@ -1,15 +1,23 @@
 ---
 import BaseLayout from './base.astro'
+import Header from '~/sections/header/header.astro'
+import { getEntry } from 'astro:content'
+import { getImage } from 'astro:assets'
+
+const site = await getEntry('site', 'site')
+const logoProps = await getImage({ src: site.data.logo, width: 70, height: 70 })
 ---
 
 <BaseLayout>
   <!-- <head/> -->
   <Fragment slot="head">
+    <link rel="preload" href={logoProps.src} as="image" />
     <slot name="head" />
   </Fragment>
 
   <!-- <body /> -->
-  <main>
+  <Header site={site} logo={logoProps} />
+  <main class="min-h-screen pt-32 px-4">
     <slot />
   </main>
 </BaseLayout>
