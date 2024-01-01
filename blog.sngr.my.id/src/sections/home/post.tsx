@@ -15,7 +15,7 @@ const PostSection: FC<{ post: CollectionEntry<'posts'> }> = ({ post }) => {
       <h2>
         <a href={url}>{post.data.title}</a>
       </h2>
-      <>{getExcerpt(post.body)}</>
+      <>{getExcerpt(post.body, 'html')}</>
       <div className="not-prose flex gap-2 items-center text-xs">
         <a
           className="border border-gray-300 px-4 py-1 rounded-full hover:underline"
