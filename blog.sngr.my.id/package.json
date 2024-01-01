@@ -19,7 +19,7 @@
     "@astrojs/react": "3.0.6",
     "@astrojs/rss": "3.0.0",
     "@astrojs/sitemap": "3.0.3",
-    "@astrojs/vercel": "5.2.0",
+    "@astrojs/vercel": "6.1.1",
     "@fontsource-variable/plus-jakarta-sans": "5.0.18",
     "@fontsource/plus-jakarta-sans": "5.0.17",
     "@resvg/resvg-js": "2.6.0",
