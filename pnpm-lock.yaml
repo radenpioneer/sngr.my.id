@@ -35,6 +35,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^6.1.1
         version: 6.1.1(astro@4.0.8)
+      '@fontsource-variable/plus-jakarta-sans':
+        specifier: ^5.0.19
+        version: 5.0.19
       '@keystatic/astro':
         specifier: ^2.0.3
         version: 2.0.3(@keystatic/core@0.2.9)(astro@4.0.8)(react-dom@18.2.0)(react@18.2.0)
@@ -1994,6 +1997,10 @@ packages:
 
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+    dev: false
+
+  /@fontsource-variable/plus-jakarta-sans@5.0.19:
+    resolution: {integrity: sha512-/R9zG7DrKms5ULl0QKvtKWNytEKvVYbtQEJp/oyyXf3092f5Cpn6+qzjRu+yATWl0EsJpNwvfveP8ExQwa/3Jw==}
     dev: false
 
   /@formatjs/ecma402-abstract@1.18.0:
