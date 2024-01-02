@@ -61,6 +61,18 @@ const image = post.data.image
           {post.data.title}
         </h1>
         {
+          post.data.description && (
+            <p class="text-xl md:text-3xl text-gray-500 leading-snug">
+              {post.data.description}
+            </p>
+          )
+        }
+        <div class="text-sm md:text-base text-gray-500">
+          <time datetime={getISODate(post.data.date)}>
+            {getLocalDate(post.data.date)}
+          </time>
+        </div>
+        {
           image && (
             <img
               src={image.src}
@@ -72,11 +84,6 @@ const image = post.data.image
             />
           )
         }
-        <div class="text-sm text-gray-800">
-          <time datetime={getISODate(post.data.date)}>
-            {getLocalDate(post.data.date)}
-          </time>
-        </div>
       </hgroup>
       <Content />
     </article>
