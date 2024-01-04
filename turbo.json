@@ -1,11 +1,8 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "sngr.my.id#build": {
-      "outputs": [".next/**"]
-    },
-    "blog.sngr.my.id#build": {
-      "outputs": ["dist/**", ".vercel/output/**"]
+    "build": {
+      "outputs": [".next/**", "dist/**", ".vercel/output/**"]
     },
     "dev": {
       "cache": false,
