@@ -46,14 +46,14 @@ jobs:
       
       # caching
       - uses: actions/cache@v2
-        if: ${{ matrix.dir }} == 'sngr.my.id'
+        if: matrix.dir == 'sngr.my.id'
         with:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-next-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-next-
       - uses: actions/cache@v2
-        if: ${{ matrix.dir }} == 'blog.sngr.my.id'
+        if: matrix.dir == 'blog.sngr.my.id'
         with:
           path: ${{ github.workspace }}/${{ github.workspace }}/node_modules/.astro
           key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
