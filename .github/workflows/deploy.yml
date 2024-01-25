@@ -55,7 +55,7 @@ jobs:
       - uses: actions/cache@v2
         if: matrix.dir == 'blog.sngr.my.id'
         with:
-          path: ${{ github.workspace }}/${{ github.workspace }}/node_modules/.astro
+          path: ${{ github.workspace }}/node_modules/.astro
           key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-astro-
