@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./base.astro"
+import Analytics from "~/partials/analytics.astro"
 import { SEO } from "astro-seo"
 
 interface Props {
@@ -23,6 +24,7 @@ const { title, description, hidden } = Astro.props
 			noindex={hidden}
 			nofollow={hidden}
 		/>
+		<Analytics />
 	</Fragment>
 
 	{/* <body /> */}
