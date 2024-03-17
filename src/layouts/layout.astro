@@ -1,34 +1,34 @@
 ---
-import BaseLayout from "./base.astro"
-import Analytics from "~/partials/analytics.astro"
-import { SEO } from "astro-seo"
+import BaseLayout from './base.astro'
+import Analytics from '~/partials/analytics.astro'
+import { SEO } from 'astro-seo'
 
 interface Props {
-	title?: string
-	description?: string
-	hidden?: boolean
+  title?: string
+  description?: string
+  hidden?: boolean
 }
 
 const { title, description, hidden } = Astro.props
 ---
 
 <BaseLayout>
-	{/* <head /> */}
-	<Fragment slot="head">
-		<slot name="head" />
-		<SEO
-			title={title}
-			titleTemplate={`%s \u2014 sngr.my.id`}
-			titleDefault="sngr.my.id"
-			description={description || 'sngr.my.id'}
-			noindex={hidden}
-			nofollow={hidden}
-		/>
-		<Analytics />
-	</Fragment>
+  {/* <head /> */}
+  <Fragment slot="head">
+    <slot name="head" />
+    <SEO
+      title={title}
+      titleTemplate={`%s \u2014 sngr.my.id`}
+      titleDefault="sngr.my.id"
+      description={description || 'sngr.my.id'}
+      noindex={hidden}
+      nofollow={hidden}
+    />
+    <Analytics />
+  </Fragment>
 
-	{/* <body /> */}
-	<Fragment>
-		<slot />
-	</Fragment>
+  {/* <body /> */}
+  <Fragment>
+    <slot />
+  </Fragment>
 </BaseLayout>
