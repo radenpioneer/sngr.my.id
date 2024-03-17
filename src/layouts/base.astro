@@ -1,0 +1,15 @@
+---
+import Head from './head.astro'
+---
+
+<html lang="id">
+  {/* <head /> */}
+  <Head>
+    <slot name="head" />
+  </Head>
+
+  {/* <body /> */}
+  <body>
+    <slot />
+  </body>
+</html>

@@ -4,9 +4,15 @@
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
+image: gitpod/workspace-bun
+vscode:
+  extensions:
+    - 'astro-build.astro-vscode'
+    - 'bradlc.vscode-tailwindcss'
+
 tasks:
   - init: |
-      npm i -g vercel
-      pnpm install
-
-
+      bun install --frozen-lockfile
+    command: |
+      bun i -g vercel
+      bun run dev
