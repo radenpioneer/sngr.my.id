@@ -2,12 +2,15 @@
 import BaseLayout from './base.astro'
 import Analytics from '~/partials/analytics.astro'
 import { SEO } from 'astro-seo'
+import { getEntry } from 'astro:content'
 
 interface Props {
   title?: string
   description?: string
   hidden?: boolean
 }
+
+const { data: site } = await getEntry('site', 'site')
 
 const { title, description, hidden } = Astro.props
 ---
@@ -18,12 +21,13 @@ const { title, description, hidden } = Astro.props
     <slot name="head" />
     <SEO
       title={title}
-      titleTemplate={`%s \u2014 sngr.my.id`}
-      titleDefault="sngr.my.id"
-      description={description || 'sngr.my.id'}
+      titleTemplate={`%s \u2014 ${site.title}`}
+      titleDefault={site.title}
+      description={description || site.description}
       noindex={hidden}
       nofollow={hidden}
     />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <Analytics />
   </Fragment>
 
