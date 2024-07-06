@@ -1,0 +1,26 @@
+---
+import { getEntry } from 'astro:content'
+
+const site = await getEntry('site', 'site')
+---
+
+<header class='container'>
+  <nav>
+    <ul>
+      <li class='title'>
+        <a href='/'>{site.data.title}</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href='/#about'>About</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang='scss'>
+  .title {
+    font-weight: 700;
+  }
+</style>

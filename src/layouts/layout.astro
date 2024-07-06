@@ -1,6 +1,7 @@
 ---
 import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
 import SEO, { type Props as SEOProps } from '../components/site/seo.astro'
+import Header from '../components/site/header.astro'
 
 export interface Props extends SEOProps, Omit<BaseLayoutProps, 'title'> {}
 
@@ -15,5 +16,14 @@ const { title, description, ...attrs } = Astro.props
   </Fragment>
 
   {/* <body /> */}
+  <Header />
   <slot />
 </BaseLayout>
+
+<style lang='scss' is:global>
+  @use '@picocss/pico/scss/pico';
+
+  body {
+    min-height: 100dvh;
+  }
+</style>

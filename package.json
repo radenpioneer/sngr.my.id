@@ -14,6 +14,7 @@
     "start": "conc bun:dev"
   },
   "dependencies": {
+    "@picocss/pico": "^2.0.6",
     "astro": "^4.11.5"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "prettier": "3.3.2",
     "prettier-config-standard": "7.0.0",
     "prettier-plugin-astro": "0.14.0",
+    "sass": "^1.77.6",
     "typescript": "^5.5.3"
   }
 }
