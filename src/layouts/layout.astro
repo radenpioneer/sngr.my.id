@@ -1,0 +1,19 @@
+---
+import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
+import SEO, { type Props as SEOProps } from '../components/site/seo.astro'
+
+export interface Props extends SEOProps, Omit<BaseLayoutProps, 'title'> {}
+
+const { title, description, ...attrs } = Astro.props
+---
+
+<BaseLayout {...attrs}>
+  {/* <head /> */}
+  <Fragment slot='head'>
+    <SEO title={title} description={description} />
+    <slot name='head' />
+  </Fragment>
+
+  {/* <body /> */}
+  <slot />
+</BaseLayout>
