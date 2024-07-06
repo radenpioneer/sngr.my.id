@@ -2,6 +2,7 @@
 import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
 import SEO, { type Props as SEOProps } from '../components/site/seo.astro'
 import Header from '../components/site/header.astro'
+import Footer from '../components/site/footer.astro'
 
 export interface Props extends SEOProps, Omit<BaseLayoutProps, 'title'> {}
 
@@ -18,12 +19,19 @@ const { title, description, ...attrs } = Astro.props
   {/* <body /> */}
   <Header />
   <slot />
+  <Footer />
 </BaseLayout>
 
 <style lang='scss' is:global>
   @use '@picocss/pico/scss/pico';
 
+  @view-transition {
+    navigation: auto; /* enabled! */
+  }
+
   body {
     min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
   }
 </style>

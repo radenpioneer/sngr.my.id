@@ -10,6 +10,12 @@ module.exports = {
         parser: 'astro',
         htmlWhitespaceSensitivity: 'ignore'
       }
+    },
+    {
+      files: '*.mdoc',
+      options: {
+        parser: 'markdown'
+      }
     }
   ]
 }

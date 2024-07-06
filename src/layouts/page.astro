@@ -1,0 +1,18 @@
+---
+import Layout, { type Props as LayoutProps } from './layout.astro'
+
+interface Props extends LayoutProps {}
+
+const { title, description, ...attrs } = Astro.props
+---
+
+<Layout title={title} description={description} {...attrs}>
+  <main class='container'>
+    <h1>{title}</h1>
+    <slot />
+  </main>
+
+  <Fragment slot='head'>
+    <slot name='head' />
+  </Fragment>
+</Layout>

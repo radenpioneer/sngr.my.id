@@ -1,0 +1,47 @@
+---
+const links = [
+  {
+    name: 'Privacy Policy',
+    uri: '/privacy-policy'
+  }
+] as const
+---
+
+<footer class='container'>
+  <div>
+    <small>
+      &copy; {new Date().toLocaleDateString('id', { year: 'numeric' })}
+    </small>
+  </div>
+  <ul class='links'>
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.uri}>
+            <small>{link.name}</small>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
+
+<style lang='scss'>
+  footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .links {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 0;
+    > li {
+      list-style: none;
+      margin-bottom: 0;
+    }
+  }
+</style>

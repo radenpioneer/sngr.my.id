@@ -7,8 +7,8 @@ const site = await getEntry('site', 'site')
 <header class='container'>
   <nav>
     <ul>
-      <li class='title'>
-        <a href='/'>{site.data.title}</a>
+      <li>
+        <a href='/' data-astro-prefetch><strong>{site.data.title}</strong></a>
       </li>
     </ul>
     <ul>
@@ -18,9 +18,3 @@ const site = await getEntry('site', 'site')
     </ul>
   </nav>
 </header>
-
-<style lang='scss'>
-  .title {
-    font-weight: 700;
-  }
-</style>
