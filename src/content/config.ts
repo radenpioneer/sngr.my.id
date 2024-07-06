@@ -16,7 +16,8 @@ export const collections = {
         description: z.string().optional(),
         date: z.date().default(new Date()),
         tags: z.array(z.string()).optional(),
-        image: image().optional()
+        image: image().optional(),
+        draft: z.boolean().optional()
       })
   }),
   page: defineCollection({

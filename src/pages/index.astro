@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/layout.astro'
 
-const posts = await getCollection('post')
+const posts = await getCollection('post', ({ data }) => !data.draft)
 ---
 
 <Layout>
@@ -22,6 +22,17 @@ const posts = await getCollection('post')
                 {post.data.description ||
                   post.body.match(/.*(?=\.)/)?.toString()}
               </p>
+              {post.data.tags && (
+                <ul class='tags'>
+                  {post.data.tags.map((tag) => (
+                    <li>
+                      <a href={`/#tags/${tag}`}>
+                        <small>{tag}</small>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </article>
           )
         })
@@ -29,3 +40,22 @@ const posts = await getCollection('post')
     </section>
   </main>
 </Layout>
+
+<style lang='scss'>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    > li {
+      list-style: none;
+      background-color: var(--pico-primary-background);
+      border-radius: 9999px;
+      padding: 0 1rem;
+      > a {
+        color: var(--pico-primary-inverse);
+        --pico-text-decoration: none;
+      }
+    }
+  }
+</style>

@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.sngr.my.id',
-  integrations: [markdoc(), sitemap()],
+  integrations: [markdoc({ allowHTML: true }), sitemap()],
   prefetch: {
     defaultStrategy: 'tap'
   }
