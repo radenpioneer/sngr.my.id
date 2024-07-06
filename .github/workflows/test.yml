@@ -1,0 +1,19 @@
+name: Test on Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Install & build your site
+        uses: withastro/action@v2
+      - name: Test with Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          configPath: './lighthouserc.json'
+          temporaryPublicStorage: true
