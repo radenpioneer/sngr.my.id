@@ -8,7 +8,13 @@ const site = await getEntry('site', 'site')
   <nav>
     <ul>
       <li>
-        <a href='/' data-astro-prefetch><strong>{site.data.title}</strong></a>
+        <a
+          x-bind:href='window.location.pathname === "/" ? false : "/"'
+          x-data
+          data-astro-prefetch
+        >
+          <strong>{site.data.title}</strong>
+        </a>
       </li>
     </ul>
     <ul>

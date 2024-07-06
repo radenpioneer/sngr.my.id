@@ -14,12 +14,14 @@
     "start": "conc bun:dev"
   },
   "dependencies": {
+    "@alpinejs/csp": "^3.14.1",
     "@astrojs/markdoc": "0.11.1",
     "@astrojs/rss": "4.0.7",
     "@astrojs/sitemap": "3.1.6",
     "@fontsource-variable/plus-jakarta-sans": "5.0.21",
     "@markdoc/markdoc": "0.4.0",
     "@picocss/pico": "2.0.6",
+    "alpinejs": "^3.14.1",
     "astro": "4.11.5"
   },
   "devDependencies": {

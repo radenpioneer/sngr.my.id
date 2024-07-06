@@ -42,3 +42,12 @@ const { title, description, ...attrs } = Astro.props
     navigation: auto; /* View Transitions */
   }
 </style>
+
+<script>
+  // @ts-nocheck
+  import Alpine from 'alpinejs'
+
+  window.Alpine = Alpine
+
+  Alpine.start()
+</script>
