@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-files
-          path: "dist"
+          path: 'dist'
 
   test:
     name: Lighthouse CI Test
@@ -67,7 +67,7 @@ jobs:
           sparse-checkout: |
             .bun-version
             package.json
-            package-lock.json
+            yarn.lock
             wrangler.toml
           sparse-checkout-cone-mode: false
 

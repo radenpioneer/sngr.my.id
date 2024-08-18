@@ -1,13 +1,13 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
-import cloudflare from "@astrojs/cloudflare";
+import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
+  output: 'hybrid',
   adapter: cloudflare({
     platformProxy: {
       enabled: true
     }
   })
-});
+})
