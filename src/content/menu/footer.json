@@ -4,10 +4,25 @@
   "description": "Menu untuk ditampilkan pada footer situs.",
   "items": [
     {
+      "discriminant": "page",
+      "value": "blogroll"
+    },
+    {
+      "discriminant": "page",
+      "value": "kebijakan-privasi"
+    },
+    {
       "discriminant": "link",
       "value": {
         "title": "Github",
         "url": "https://github.com/radenpioneer/sngr.my.id"
+      }
+    },
+    {
+      "discriminant": "link",
+      "value": {
+        "title": "RSS",
+        "url": "/rss.xml"
       }
     }
   ]
