@@ -61,10 +61,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Get wrangler.toml
+      - name: Get necessary files
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
+            package.json
+            package-lock.json
             wrangler.toml
           sparse-checkout-cone-mode: false
 
@@ -73,9 +75,10 @@ jobs:
         with:
           name: build-files
           path: dist
-          
+
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          packageManager: bun
           command: pages deploy --project-name=sngr-my-id
