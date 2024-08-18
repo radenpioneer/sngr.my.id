@@ -65,6 +65,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
+            .bun-version
             package.json
             package-lock.json
             wrangler.toml
@@ -75,6 +76,11 @@ jobs:
         with:
           name: build-files
           path: dist
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
+        with:
+          bun-version-file: .bun-version
 
       - uses: cloudflare/wrangler-action@v3
         with:
