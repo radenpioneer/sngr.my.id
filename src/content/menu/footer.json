@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../.astro/collections/menu.schema.json",
+  "title": "Footer",
+  "description": "Menu untuk ditampilkan pada footer situs.",
+  "items": [
+    {
+      "discriminant": "link",
+      "value": {
+        "title": "Github",
+        "url": "https://github.com/radenpioneer/sngr.my.id"
+      }
+    }
+  ]
+}

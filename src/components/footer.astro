@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getEntry } from 'astro:content'
+import { transformMenu } from '~/utils/menu'
+
+export interface Props {
+  site: CollectionEntry<'site'>
+}
+
+const { site } = Astro.props
+const menuData = await getEntry('menu', 'footer')
+const menu = await transformMenu(menuData)
+---
+
+<footer
+  class='mx-auto flex w-full flex-col-reverse justify-between gap-4 border-t-4 border-zinc-950 bg-zinc-50 px-4 py-4 [max-width:1024px] sm:flex-row sm:items-center'
+>
+  <a class='font-black' href='/#top'>{site.data.title}</a>
+  {
+    (
+      <ul class='flex flex-col gap-1 sm:flex-row sm:items-center'>
+        {menu.map((link, _i) => (
+          <Fragment>
+            {_i > 0 && <span class='hidden sm:block'>&bull;</span>}
+            <li class='font-serif text-sm italic text-zinc-600'>
+              <a
+                class='hover:underline'
+                href={link.url}
+                target={link.url.startsWith('https://') ? '_blank' : '_self'}
+              >
+                {link.title}
+              </a>
+            </li>
+          </Fragment>
+        ))}
+      </ul>
+    )
+  }
+</footer>

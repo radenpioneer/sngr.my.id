@@ -27,8 +27,6 @@ pnpm-debug.log*
 .wrangler
 .dev.vars
 
-# icons
-public/favicon.ico
-public/apple-touch-icon-*
-public/maskable-icon-*
-public/pwa-*
+# Content Collections
+src/content/*
+!src/content/config.ts

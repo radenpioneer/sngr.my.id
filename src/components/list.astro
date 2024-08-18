@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Article from './article.astro'
+import { getExcerpt } from '~/utils/excerpt'
+import { render } from '~/utils/render'
+
+interface Props {
+  posts: Array<CollectionEntry<'posts'>>
+}
+
+const { posts } = Astro.props
+---
+
+<div class='grid gap-y-4 sm:px-4'>
+  {
+    posts.map((post) => (
+      <Article title={post.data.title} link={`/posts/${post.slug}`} type='card'>
+        <div class='not-prose font-sans text-sm italic text-zinc-600'>
+          Diposting pada tanggal{' '}
+          <a class='underline' href={`/posts/${post.slug}`}>
+            {post.data.date.toLocaleDateString('id-ID', {
+              dateStyle: 'long',
+              calendar: 'islamic'
+            })}
+          </a>
+        </div>
+        <Fragment set:html={render(getExcerpt(post.body)!)} />
+        {post.data.tags && (
+          <div class='not-prose gap-1 font-sans text-sm italic text-zinc-600'>
+            Tag:{' '}
+            <Fragment>
+              {post.data.tags.map((tag, _i, arr) => (
+                <>
+                  <a class='underline' href={`/tags/${tag.slug}`}>
+                    {tag.name}
+                  </a>
+                  {_i < arr.length - 1 && '/'}
+                </>
+              ))}
+            </Fragment>
+          </div>
+        )}
+      </Article>
+    ))
+  }
+</div>

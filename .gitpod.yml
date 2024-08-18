@@ -15,4 +15,4 @@ vscode:
     - mhutchie.git-graph
     - github.vscode-github-actions
     - astro-build.houston
-    - oven.bun-vscode
+    - tamasfe.even-better-toml
