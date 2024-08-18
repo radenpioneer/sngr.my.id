@@ -165,6 +165,7 @@ export default config({
       path: 'src/content/menu/*',
       format: 'json',
       schema: {
+        $schema: fields.ignored(),
         title: fields.slug({
           name: {
             label: 'Nama Menu',
@@ -232,6 +233,7 @@ export default config({
       path: 'src/content/site/site',
       format: 'json',
       schema: {
+        $schema: fields.ignored(),
         title: fields.text({
           label: 'Nama Situs',
           validation: { isRequired: true, length: { max: 64 } }

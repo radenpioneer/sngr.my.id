@@ -1,17 +1,13 @@
 ---
+import DoubleColumnLayout from '~/layouts/double.astro'
+import List from '~/components/list.astro'
+import { getCollection } from 'astro:content'
 
+const posts = await getCollection('posts', (post) => !post.data.draft)
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <meta name='description' content='Astro' />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<DoubleColumnLayout>
+  <section class='sm:border-t-4 sm:border-zinc-950 sm:pt-4'>
+    <List posts={posts} />
+  </section>
+</DoubleColumnLayout>

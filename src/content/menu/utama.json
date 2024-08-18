@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../.astro/collections/menu.schema.json",
   "title": "Utama",
   "description": "Menu untuk ditampilkan pada header situs.",
   "items": [

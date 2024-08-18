@@ -1,12 +1,18 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
+import tailwindcss from '@astrojs/tailwind'
+import sitemap from '@astrojs/sitemap'
 import keystatic from '@keystatic/astro'
 import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sngr.my.id',
-  integrations: [react(), keystatic()],
+  integrations: [react(), tailwindcss(), sitemap(), keystatic()],
+  prefetch: {
+    defaultStrategy: 'tap',
+    prefetchAll: true
+  },
   output: 'hybrid',
   adapter: cloudflare({
     platformProxy: {
@@ -17,5 +23,11 @@ export default defineConfig({
     define: {
       'process.env': process.env
     }
+  },
+  experimental: {
+    contentCollectionCache: true,
+    directRenderScript: true,
+    clientPrerender: true,
+    contentIntellisense: true
   }
 })

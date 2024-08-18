@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'article'> {
+  title: string
+  link?: string
+  type?: 'page' | 'card'
+}
+
+const { title, class: className, link, type = 'page', ...props } = Astro.props
+---
+
+<article
+  class:list={[
+    'prose prose-zinc font-serif prose-h1:font-sans prose-h2:font-sans prose-a:no-underline hover:prose-a:underline',
+    className
+  ]}
+  ,
+  {...props}
+>
+  {
+    type === 'card' ? (
+      <h2>
+        <a class='!font-bold' href={link || '#'}>
+          {title}
+        </a>
+      </h2>
+    ) : (
+      <h1>{title}</h1>
+    )
+  }
+  <slot />
+</article>

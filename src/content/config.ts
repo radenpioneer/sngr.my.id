@@ -20,8 +20,8 @@ export const collections = {
       z.object({
         title: z.string().max(160),
         date: z.date(),
-        subtitle: z.string().max(160),
-        description: z.string().max(160),
+        subtitle: z.string().max(160).optional(),
+        description: z.string().max(160).optional(),
         tags: z
           .array(
             z.object({
@@ -41,7 +41,7 @@ export const collections = {
     schema: ({ image }) =>
       z.object({
         title: z.string().max(160),
-        description: z.string().max(160),
+        description: z.string().max(160).optional(),
         image: image().optional()
       })
   }),
@@ -52,20 +52,22 @@ export const collections = {
       z.object({
         title: z.string().max(64),
         description: z.string().max(160).optional(),
-        items: z.discriminatedUnion('discriminant', [
-          z.object({
-            discriminant: z.literal('page'),
-            value: reference('pages')
-          }),
-          z.object({
-            discriminant: z.literal('link'),
-            value: z.object({
-              title: z.string(),
-              url: z.string(),
-              icon: image().optional()
+        items: z.array(
+          z.discriminatedUnion('discriminant', [
+            z.object({
+              discriminant: z.literal('page'),
+              value: reference('pages')
+            }),
+            z.object({
+              discriminant: z.literal('link'),
+              value: z.object({
+                title: z.string(),
+                url: z.string(),
+                icon: image().optional()
+              })
             })
-          })
-        ])
+          ])
+        )
       })
   })
 }
