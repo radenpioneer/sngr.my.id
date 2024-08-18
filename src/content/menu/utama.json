@@ -1,0 +1,17 @@
+{
+  "title": "Utama",
+  "description": "Menu untuk ditampilkan pada header situs.",
+  "items": [
+    {
+      "discriminant": "link",
+      "value": {
+        "title": "Beranda",
+        "url": "/"
+      }
+    },
+    {
+      "discriminant": "page",
+      "value": "about"
+    }
+  ]
+}

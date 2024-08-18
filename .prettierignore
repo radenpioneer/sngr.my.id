@@ -26,3 +26,7 @@ pnpm-debug.log*
 # wrangler files
 .wrangler
 .dev.vars
+
+# Content Collections
+src/content/*
+!src/content/config.ts
