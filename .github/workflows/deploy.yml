@@ -29,7 +29,7 @@ jobs:
       - name: Upload Pages Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: deploy-files
+          name: dist
           path: "dist/"
 
   test:
@@ -37,11 +37,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Get .lighthouserc.json
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .lighthouserc.json
+          sparse-checkout-cone-mode: false
       - name: Get Site Artifact
         uses: actions/download-artifact@v4
         with:
-          name: deploy-files
-          path: dist/
+          name: dist
+          path: dist
       - name: Test with Lighthouse CI
         uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # v12
         with:
@@ -53,11 +59,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Get wrangler.toml
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            wrangler.toml
+          sparse-checkout-cone-mode: false
       - name: Get Site Artifact
         uses: actions/download-artifact@v4
         with:
-          name: deploy-files
-          path: dist/
+          name: dist
+          path: dist
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
