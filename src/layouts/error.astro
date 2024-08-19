@@ -2,7 +2,7 @@
 import SingleColumnLayout, {
   type Props as SingleColumnLayoutProps
 } from '~/layouts/single.astro'
-import Article from '~/components/article.astro'
+import Article from '~/components/article/article.astro'
 
 export interface Props
   extends Required<Pick<SingleColumnLayoutProps, 'title' | 'description'>> {}

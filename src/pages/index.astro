@@ -7,7 +7,7 @@ const posts = await getCollection('posts', (post) => !post.data.draft)
 ---
 
 <DoubleColumnLayout>
-  <section class='sm:border-t-4 sm:border-zinc-950 sm:pt-4'>
+  <section>
     <List posts={posts} />
   </section>
 </DoubleColumnLayout>

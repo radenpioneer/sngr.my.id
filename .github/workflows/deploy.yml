@@ -67,7 +67,7 @@ jobs:
           sparse-checkout: |
             .bun-version
             package.json
-            yarn.lock
+            bun.lockb
             wrangler.toml
           sparse-checkout-cone-mode: false
 

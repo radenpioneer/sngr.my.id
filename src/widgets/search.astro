@@ -1,14 +1,10 @@
 ---
+import SearchBar from './search'
+export interface Props {
+  value?: string | undefined
+}
 
+const { value } = Astro.props
 ---
 
-<form class='flex gap-1'>
-  <input
-    class='flex-1'
-    type='search'
-    name='search'
-    id='search'
-    aria-label='Cari'
-  />
-  <input class='bg-zinc-400 px-4 py-1' type='submit' value='Cari' />
-</form>
+<SearchBar value={value} client:idle />
