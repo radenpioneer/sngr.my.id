@@ -8,12 +8,7 @@ import cloudflare from '@astrojs/cloudflare'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sngr.my.id',
-  integrations: [
-    react(),
-    tailwindcss(),
-    sitemap(),
-    keystatic()
-  ],
+  integrations: [react(), tailwindcss(), sitemap(), keystatic()],
   prefetch: {
     defaultStrategy: 'tap',
     prefetchAll: true
