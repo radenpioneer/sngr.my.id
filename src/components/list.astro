@@ -1,4 +1,5 @@
 ---
+import type { HTMLAttributes } from 'astro/types'
 import type { CollectionEntry } from 'astro:content'
 import Article from './article/article.astro'
 import ArticleDate from '~/components/article/date.astro'
@@ -6,14 +7,14 @@ import ArticleTags from '~/components/article/tags.astro'
 import { getExcerpt } from '~/utils/excerpt'
 import { render } from '~/utils/render'
 
-interface Props {
+interface Props extends HTMLAttributes<'div'> {
   posts: Array<CollectionEntry<'posts'>>
 }
 
-const { posts } = Astro.props
+const { posts, class: className, ...props } = Astro.props
 ---
 
-<div class='grid gap-y-4'>
+<div class:list={['grid gap-y-4', className]} {...props}>
   {
     posts.map((post) => (
       <Article title={post.data.title} link={`/posts/${post.slug}`} type='card'>
