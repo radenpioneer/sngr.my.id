@@ -33,6 +33,7 @@ export default defineConfig({
     contentCollectionCache: true,
     directRenderScript: true,
     clientPrerender: true,
-    contentIntellisense: true
+    contentIntellisense: true,
+    serverIslands: true
   }
 })
