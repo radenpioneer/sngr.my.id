@@ -13,6 +13,7 @@ const SearchBar: FC<SearchProps> = ({ value }) => {
         id='searchBar'
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
+        aria-label='Pencarian'
       />
       <button
         type='submit'
