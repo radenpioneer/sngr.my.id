@@ -6,8 +6,8 @@
   Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self'; frame-ancestors 'none';
 
 /_astro/*
-  Cache-Control: public, max-age=31536000, immutable
-  CDN-Cache-Control: public, s-maxage=31536000, immutable
+  Cache-Control: public, max-age=31536000, must-revalidate
+  CDN-Cache-Control: public, s-maxage=31536000, must-revalidate
 
 /keystatic/*
   X-Robots-Tag: noindex
