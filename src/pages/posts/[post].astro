@@ -1,7 +1,9 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import DoubleColumnLayout from '~/layouts/double.astro'
-import Article from '~/components/article.astro'
+import Article from '~/components/article/article.astro'
+import ArticleDate from '~/components/article/date.astro'
+import ArticleTags from '~/components/article/tags.astro'
 import { getCollection } from 'astro:content'
 import { getImage } from 'astro:assets'
 import { getCleanExcerpt } from '~/utils/excerpt'
@@ -33,8 +35,10 @@ const preloadHeaderImage = post.data.image
   image={post.data.image}
   lang={post.data.lang}
 >
-  <Article title={post.data.title} class='max-w-none'>
+  <Article title={post.data.title} class='min-h-full max-w-none'>
+    <ArticleDate date={post.data.date} link={`/posts/${post.slug}`} />
     <Content />
+    <ArticleTags tags={post.data.tags} class='mt-auto' />
   </Article>
 
   {/* head */}
