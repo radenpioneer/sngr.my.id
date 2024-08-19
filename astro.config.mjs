@@ -12,7 +12,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     sitemap(),
-    ...(process.env.KEYSTATIC ? [keystatic()] : [])
+    keystatic()
   ],
   prefetch: {
     defaultStrategy: 'tap',
