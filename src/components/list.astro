@@ -16,12 +16,18 @@ const { posts, class: className, ...props } = Astro.props
 
 <div class:list={['grid gap-y-4', className]} {...props}>
   {
-    posts.map((post) => (
-      <Article title={post.data.title} link={`/posts/${post.slug}`} type='card'>
-        <ArticleDate date={post.data.date} link={`/posts/${post.slug}`} />
-        <Fragment set:html={render(getExcerpt(post.body)!)} />
-        <ArticleTags tags={post.data.tags} />
-      </Article>
-    ))
+    posts
+      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+      .map((post) => (
+        <Article
+          title={post.data.title}
+          link={`/posts/${post.slug}`}
+          type='card'
+        >
+          <ArticleDate date={post.data.date} link={`/posts/${post.slug}`} />
+          <Fragment set:html={render(getExcerpt(post.body)!)} />
+          <ArticleTags tags={post.data.tags} />
+        </Article>
+      ))
   }
 </div>

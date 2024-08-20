@@ -10,7 +10,7 @@
     "check:astro": "astro check",
     "check:format": "prettier --check .",
     "deploy": "conc bun:build && wrangler pages deploy",
-    "dev": "astro dev",
+    "dev": "KEYSTATIC=true astro dev",
     "format": "prettier --write .",
     "gen:icons": "pwa-assets-generator --preset minimal-2023 public/favicon.svg",
     "preview": "conc bun:build && wrangler pages dev",
