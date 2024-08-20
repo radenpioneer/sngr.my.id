@@ -19,7 +19,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         uses: lewagon/wait-on-check-action@v1.3.4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.sha }}
           check-name: 'Run Lighthouse Test'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
