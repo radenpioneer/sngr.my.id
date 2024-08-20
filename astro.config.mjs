@@ -25,9 +25,7 @@ export default defineConfig({
     }
   },
   experimental: {
-    contentCollectionCache: true,
     directRenderScript: true,
-    clientPrerender: true,
-    contentIntellisense: true
+    clientPrerender: true
   }
 })
