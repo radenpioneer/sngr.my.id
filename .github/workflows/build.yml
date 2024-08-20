@@ -1,22 +1,20 @@
-name: Lighthouse Test
+name: Install deps and build
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
-  lighthouse:
-    name: Run Lighthouse Test
+  deploy:
     runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: .bun-version
-
       - name: Restore Build Cache
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
         with:
@@ -28,9 +26,3 @@ jobs:
 
       - name: Build your site
         run: bun run build
-
-      - name: Test with Lighthouse CI
-        uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # v12
-        with:
-          configPath: './.lighthouserc.json'
-          temporaryPublicStorage: true
