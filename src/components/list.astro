@@ -24,7 +24,11 @@ const { posts, class: className, ...props } = Astro.props
           link={`/posts/${post.slug}`}
           type='card'
         >
-          <ArticleDate date={post.data.date} link={`/posts/${post.slug}`} />
+          <ArticleDate
+            date={post.data.date}
+            link={`/posts/${post.slug}`}
+            slot='header'
+          />
           <Fragment set:html={render(getExcerpt(post.body)!)} />
           <ArticleTags tags={post.data.tags} />
         </Article>
