@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
       - name: Waiting test (pull request only)
         if: ${{ github.event_name == 'pull_request' }}
         uses: lewagon/wait-on-check-action@v1.3.4
@@ -20,9 +23,6 @@ jobs:
           check-name: 'Run Lighthouse Test'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
-
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
