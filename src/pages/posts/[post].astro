@@ -36,7 +36,15 @@ const preloadHeaderImage = post.data.image
   lang={post.data.lang}
 >
   <Article title={post.data.title} class='min-h-full max-w-none'>
-    <ArticleDate date={post.data.date} link={`/posts/${post.slug}`} />
+    {/* header */}
+    <Fragment slot='header'>
+      <div class='not-prose mb-2 text-lg italic lg:text-xl'>
+        {post.data.subtitle}
+      </div>
+      <ArticleDate date={post.data.date} link={`/posts/${post.slug}`} />
+    </Fragment>
+
+    {/* content */}
     <Content />
     <ArticleTags tags={post.data.tags} class='mt-auto' />
   </Article>

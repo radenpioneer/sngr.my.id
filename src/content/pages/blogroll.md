@@ -3,5 +3,6 @@ title: Blogroll
 ---
 Daftar bacaan blog, atau website yang bermanfaat, menginspirasi, dan sumber saya belajar sesuatu:
 
-* TintaBorneo.com – [https://www.tintaborneo.com](https://www.tintaborneo.com)\
-  *Situs berita lokal, that I helped manage. Tapi ya media lokal, maklumi saja kalau isinya memang \~sampah\~.*
+| Blog                                                  | Deskripsi                                                                                           |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [BloggerKalteng.com](https://www.bloggerkalteng.com/) | Senior saya ini blogger lama. Pernah punya proyek juga sama dia. Ketua Pemuda Muhammadiyah Kalteng. |

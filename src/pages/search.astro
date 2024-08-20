@@ -10,7 +10,14 @@ import Fuse from 'fuse.js'
 
 const posts = await getCollection('posts')
 const fuse = new Fuse(posts, {
-  keys: ['body', 'data.title', 'data.subtitle', 'data.description', 'data.tags']
+  keys: [
+    'body',
+    'data.title',
+    'data.subtitle',
+    'data.description',
+    'data.tags.name'
+  ],
+  ignoreLocation: true
 })
 
 const query = Astro.url.searchParams.get('q')

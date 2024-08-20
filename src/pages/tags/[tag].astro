@@ -29,7 +29,9 @@ const page = {
 
 <DoubleColumnLayout {...page}>
   <section class='sm:border-t-4 sm:border-zinc-950 sm:pt-2'>
-    <h1 class='mb-8 text-lg font-bold'>{page.title}</h1>
+    <h1 class='mb-8 text-lg font-bold'>
+      Arsip Tag: <span class='font-serif italic'>{tag.name}</span>
+    </h1>
     <List posts={posts} />
   </section>
 </DoubleColumnLayout>

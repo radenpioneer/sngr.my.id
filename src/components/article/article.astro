@@ -12,25 +12,27 @@ const { title, class: className, link, type = 'page', ...props } = Astro.props
 
 <article
   class:list={[
-    'prose prose-zinc font-serif prose-h1:mb-2 prose-h1:font-sans prose-h2:font-sans prose-a:no-underline hover:prose-a:underline',
-    { 'prose-h1:mb-2': type === 'page' },
-    { 'prose-h2:mb-1 hover:prose-h2:text-red-500': type === 'card' },
+    'prose prose-zinc font-serif prose-a:no-underline hover:prose-a:underline',
+    { 'prose-h1:mb-2 prose-h1:font-sans': type === 'page' },
+    { 'prose-h2:mb-1 prose-h2:mt-0 prose-h2:font-sans': type === 'card' },
     className
   ]}
   ,
   {...props}
 >
-  {
-    /** Heading */
-    type === 'card' ? (
-      <h2>
-        <a class='!font-bold' href={link || '#'}>
-          {title}
-        </a>
-      </h2>
-    ) : (
-      <h1>{title}</h1>
-    )
-  }
+  <hgroup>
+    {
+      /** Heading */
+      type === 'card' ? (
+        <h2>
+          <a class='!font-bold' href={link || '#'}>
+            {title}
+          </a>
+        </h2>
+      ) : (
+        <h1>{title}</h1>
+      )
+    }<slot name='header' />
+  </hgroup>
   <slot />
 </article>
