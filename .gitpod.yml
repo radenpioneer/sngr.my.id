@@ -2,7 +2,7 @@ image: gitpod/workspace-bun
 
 tasks:
   - init: bun i --frozen-lockfile
-    command: bun run dev && echo KEYSTATIC=true > .env
+    command: bun run dev
 
 ports:
   - port: 4321

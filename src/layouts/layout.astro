@@ -5,6 +5,7 @@ import Header, { type Props as HeaderProps } from '~/components/header.astro'
 import Footer from '~/components/footer.astro'
 import { getEntry } from 'astro:content'
 import { getImage } from 'astro:assets'
+import '@fontsource-variable/inter'
 
 export interface Props
   extends Omit<SEOProps, 'site'>,
@@ -22,7 +23,7 @@ const preloadHeaderImage = await getImage({
 ---
 
 <BaseLayout
-  class='flex min-h-screen flex-col bg-zinc-200 text-zinc-950 lg:py-8'
+  class='flex min-h-screen flex-col bg-zinc-200 font-body text-zinc-950 lg:py-8'
   lang={lang || site.data.lang}
   {...props}
 >

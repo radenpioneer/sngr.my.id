@@ -4,7 +4,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['-apple-system', 'Inter', 'ui-sans-serif', 'system-ui', 'Arial', 'sans-serif']
+        body: [
+          '-apple-system',
+          '"Inter Variable"',
+          'ui-sans-serif',
+          'system-ui',
+          'Arial',
+          'sans-serif'
+        ],
+        article: ['"Crimson Pro Variable"', 'ui-serif', 'sans-serif']
       }
     }
   },
