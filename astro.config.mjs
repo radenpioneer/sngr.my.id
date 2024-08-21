@@ -14,6 +14,9 @@ export default defineConfig({
     sitemap(),
     ...(process.env.KEYSTATIC ? [keystatic()] : [])
   ],
+  image: {
+    domains: ['astro.badg.es']
+  },
   prefetch: {
     defaultStrategy: 'tap',
     prefetchAll: true

@@ -16,35 +16,47 @@ const menu = await transformMenu(menuData)
 <footer
   class='mx-auto flex w-full flex-col-reverse justify-between gap-4 border-t-4 border-zinc-950 bg-zinc-50 px-4 py-4 [max-width:1024px] sm:flex-row sm:items-center'
 >
-  <a class='font-bold' href='/#top'>{site.data.title}</a>
-  {
-    (
-      <ul class='flex flex-col gap-1 sm:flex-row sm:items-center'>
-        {menu.map((link, _i) => (
-          <Fragment>
-            {_i > 0 && <li class='hidden sm:block'>&bull;</li>}
-            <li class='flex items-center gap-1 font-serif text-sm italic text-zinc-600'>
-              {link.icon && (
-                <Picture
-                  src={link.icon}
-                  width={12}
-                  height={12}
-                  widths={[12]}
-                  alt=''
-                />
-              )}
-              <a
-                class='hover:underline'
-                href={link.url}
-                target={link.url.startsWith('https://') ? '_blank' : '_self'}
-              >
-                {link.title}
-              </a>
-            </li>
-          </Fragment>
-        ))}
-<li>&copy; {new Date().getFullYear()}</li>
-      </ul>
-    )
-  }
+  <div class='flex items-center gap-1'>
+    <a class='font-bold' href='/#top'>{site.data.title}</a>
+    <a href='https://astro.build' rel='nofollow' aria-label='Built with Astro'>
+      <Picture
+        src='https://astro.badg.es/v2/built-with-astro/tiny.svg'
+        alt=''
+        inferSize
+      />
+    </a>
+  </div>
+
+  {/* footer menu */}
+  <ul
+    class='flex flex-col gap-1 font-serif text-sm italic text-zinc-600 sm:flex-row sm:items-center'
+  >
+    {
+      menu.map((link, _i) => (
+        <Fragment>
+          {_i > 0 && <li class='hidden sm:block'>&bull;</li>}
+          <li class:list={[{ 'flex items-center gap-1': !!link.icon }]}>
+            {link.icon && (
+              <Picture
+                src={link.icon}
+                width={12}
+                height={12}
+                widths={[12]}
+                alt=''
+              />
+            )}
+            <a
+              class='hover:underline'
+              href={link.url}
+              target={link.url.startsWith('https://') ? '_blank' : '_self'}
+            >
+              {link.title}
+            </a>
+          </li>
+        </Fragment>
+      ))
+    }
+    <li class='hidden sm:block'>&bull;</li>
+    <li>&copy; {new Date().getFullYear()}</li>
+  </ul>
 </footer>
