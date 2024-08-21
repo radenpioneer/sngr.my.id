@@ -26,12 +26,13 @@ Blog ini hadir kembali dengan desain jadul ala web-klasik, yakin template defaul
 
 Berikut tools yang saya pakai untuk "membuat ulang" Twenty Ten:
 
-| Tools            | Keterangan                                                                                                      |
-| ---------------- | --------------------------------------------------------------------------------------------------------------- |
-| Astro            | Generator website statik berbasis JavaScript.                                                                   |
-| TailwindCSS      | CSS atomik berbasis kelas.                                                                                      |
-| React            | Sebagian kecil elemen di website ini didesain menggunakan React. Contohnya, search bar di sebelah kanan.        |
-| Fuse.js          | Pustaka *fuzzy-search* untuk pencarian internal blog ini. Mudah digunakan dan tidak *overkill* seperti Algolia. |
-| Cloudflare Pages | Hosting web modern, seperti Netlify atau Vercel.                                                                |
+| Tools                                                 | Keterangan                                                                                                                                              |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Astro**](https://astro.build/)                     | Generator website statik berbasis JavaScript.                                                                                                           |
+| [**TailwindCSS**](https://tailwindcss.com/)           | CSS atomik berbasis kelas.                                                                                                                              |
+| [**React**](https://react.dev/)                       | Sebagian kecil elemen di website ini didesain menggunakan React. Contohnya, search bar di bawah (atau kanan, jika dilihat dari layar yang lebih besar). |
+| [**Fuse.js**](https://www.fusejs.io/)                 | Pustaka *fuzzy-search* untuk pencarian internal blog ini. Mudah digunakan dan tidak *overkill* seperti Algolia.                                         |
+| [**Fontsource**](https://fontsource.org/)             | Pustaka font sumber terbuka, termasuk Google Fonts. Memungkinkan font untuk hosting di satu tempat dengan website.                                      |
+| [**Cloudflare Pages**](https://pages.cloudflare.com/) | Hosting web modern berbasis Jamstack.                                                                                                                   |
 
 Akhir kata, selamat membaca. Semoga dengan redesain ala klasik ini bisa membuat saya lebih rajin menulis. Malu saya sama [abang senior](https://www.bloggerkalteng.com/2023/06/13/radenpioneer-blog-web-developer-dari-kota-ikan-jelawat/).
