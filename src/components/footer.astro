@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 import { transformMenu } from '~/utils/menu'
 
 export interface Props {
@@ -21,8 +22,9 @@ const menu = await transformMenu(menuData)
       <ul class='flex flex-col gap-1 sm:flex-row sm:items-center'>
         {menu.map((link, _i) => (
           <Fragment>
-            {_i > 0 && <span class='hidden sm:block'>&bull;</span>}
-            <li class='font-serif text-sm italic text-zinc-600'>
+            {_i > 0 && <li class='hidden sm:block'>&bull;</li>}
+            <li class='flex gap-1 items-center font-serif text-sm italic text-zinc-600'>
+              {link.icon && <Image src={link.icon} width={12} height={12} widths={[12]} alt={link.title} />}
               <a
                 class='hover:underline'
                 href={link.url}
