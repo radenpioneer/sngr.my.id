@@ -13,8 +13,10 @@ const { title, class: className, link, type = 'page', ...props } = Astro.props
 
 <article
   class:list={[
-    'prose prose-zinc font-article prose-p:text-lg prose-p:leading-snug prose-a:no-underline hover:prose-a:underline',
-    { 'prose-h1:mb-2 prose-h1:font-body': type === 'page' },
+    'prose prose-zinc font-article lg:prose-lg prose-p:text-justify prose-a:no-underline hover:prose-a:underline',
+    {
+      'prose-h1:mb-2 prose-h1:font-body prose-h1:leading-tight': type === 'page'
+    },
     { 'prose-h2:mb-1 prose-h2:mt-0 prose-h2:font-body': type === 'card' },
     className
   ]}

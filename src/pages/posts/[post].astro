@@ -36,7 +36,10 @@ const preloadHeaderImage = post.data.image
   image={post.data.image}
   lang={post.data.lang}
 >
-  <Article title={post.data.title} class='min-h-full max-w-none'>
+  <Article
+    title={post.data.title}
+    class='min-h-full max-w-none prose-img:px-4 md:prose-img:px-8'
+  >
     {/* header */}
     <Fragment slot='header'>
       <div class='not-prose mb-2 text-xl italic md:text-2xl'>
