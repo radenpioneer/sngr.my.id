@@ -35,13 +35,17 @@ const preloadHeaderImage = await getImage({
   {/* head */}
   <Fragment slot='head'>
     <SEO title={title} description={description} site={site} />
-    <link
-      rel='preload'
-      as='image'
-      href={preloadHeaderImage.src}
-      imagesrcset={preloadHeaderImage.srcSet.attribute}
-      imagesizes={preloadHeaderImage.attributes.sizes}
-    />
+    {
+      !image && (
+        <link
+          rel='preload'
+          as='image'
+          href={preloadHeaderImage.src}
+          imagesrcset={preloadHeaderImage.srcSet.attribute}
+          imagesizes={preloadHeaderImage.attributes.sizes}
+        />
+      )
+    }
     <slot name='head' />
   </Fragment>
 </BaseLayout>

@@ -8,7 +8,7 @@ const SearchBar: FC<SearchProps> = ({ value }) => {
     <form className='flex gap-1' action='/search' method='get'>
       <input
         type='search'
-        className='flex-1'
+        className='min-w-0 flex-1'
         name='q'
         id='searchBar'
         value={searchValue}

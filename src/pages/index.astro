@@ -1,8 +1,10 @@
 ---
 import DoubleColumnLayout from '~/layouts/double.astro'
 import List from '~/components/list.astro'
-import { getCollection } from 'astro:content'
+import OGTags from '~/components/og/tags.astro'
+import { getCollection, getEntry } from 'astro:content'
 
+const site = await getEntry('site', 'site')
 const posts = await getCollection('posts', (post) => !post.data.draft)
 ---
 
@@ -10,4 +12,13 @@ const posts = await getCollection('posts', (post) => !post.data.draft)
   <section>
     <List posts={posts} />
   </section>
+
+  {/* head */}
+  <Fragment slot='head'>
+    <OGTags
+      title={site.data.title}
+      description={site.data.description}
+      image={site.data.image}
+    />
+  </Fragment>
 </DoubleColumnLayout>

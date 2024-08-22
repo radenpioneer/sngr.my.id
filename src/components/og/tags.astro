@@ -1,0 +1,106 @@
+---
+import type { Props as SEOProps } from '../seo.astro'
+import { getEntry } from 'astro:content'
+import { getImage } from 'astro:assets'
+
+const site = await getEntry('site', 'site')
+
+interface Props extends Omit<SEOProps, 'site'> {
+  type?: 'website' | 'article' | 'profile' | undefined
+  image?: typeof site.data.image | undefined
+  date?: Date | undefined
+  tags?: string[] | undefined
+}
+
+const { title, description, image, date, tags, type = 'website' } = Astro.props
+
+const largeOgImage = image
+  ? await getImage({ src: image, width: 1200, height: 630, format: 'png' })
+  : undefined
+const smallOgImage = image
+  ? await getImage({ src: image, width: 600, height: 336, format: 'png' })
+  : undefined
+---
+
+<meta property='og:title' content={title || site.data.title} />
+<meta
+  property='og:description'
+  content={description || site.data.description}
+/>
+<meta property='og:url' content={Astro.url} />
+<meta property='og:locale' content='id_ID' />
+
+{/* Open Graph image, if exist */}
+<Fragment>
+  {
+    [largeOgImage, smallOgImage].filter(Boolean).map((image) => (
+      <Fragment>
+        <meta
+          property='og:image'
+          content={new URL(image?.src!, Astro.url.origin)}
+        />
+        <meta
+          property='og:image:secure_url'
+          content={new URL(image?.src!, Astro.url.origin)}
+        />
+        <meta
+          property='og:image:width'
+          content={image?.options.width!.toString()}
+        />
+        <meta
+          property='og:image:height'
+          content={image?.options.height!.toString()}
+        />
+        <meta property='og:image:type' content='image/png' />
+        <meta
+          property='og:image:alt'
+          content={image?.attributes.alt || description}
+        />
+      </Fragment>
+    ))
+  }
+</Fragment>
+
+{/* Content type */}
+<meta property='og:type' content={type.toString()} />
+{/* if type === article */}
+<Fragment>
+  {
+    type === 'article' && (
+      <Fragment>
+        <meta property='article:published_time' content={date?.toISOString()} />
+        <meta property='article:author' content={site.data.title} />
+        {tags &&
+          tags.map((tag) => (
+            <>
+              <meta property='article:section' content={tag} />
+              <meta property='article:tag' content={tag} />
+            </>
+          ))}
+      </Fragment>
+    )
+  }
+</Fragment>
+
+{/* Twitter */}
+<meta
+  name='twitter:card'
+  content={type === 'article' ? 'summary_large_image' : 'summary'}
+/>
+<meta name='twitter:title' content={title || site.data.title} />
+<meta
+  name='twitter:description'
+  content={description || site.data.description}
+/>
+
+{/* Twitter image, if exist */}
+<Fragment>
+  {largeOgImage && <meta name='twitter:image' content={largeOgImage.src} />}
+</Fragment>
+
+{
+  /* saved for later
+<meta name='twitter:site' content='' />
+<meta name='twitter:creator' content='' />
+*/
+}
