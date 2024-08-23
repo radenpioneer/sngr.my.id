@@ -1,22 +1,18 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import type { FuseResult } from 'fuse.js'
-import List from '~/components/list.astro'
+import SearchBar from '~/widgets/search.astro'
 
 interface Props {
-  query: string
-  result: Array<FuseResult<CollectionEntry<'posts'>>>
+  query?: string
 }
 
-const { query, result } = Astro.props
+const { query } = Astro.props
 ---
 
 <Fragment>
+  <h2>Tidak menemukan hasil.</h2>
   <p>
-    Search results for:{' '}
-    <span class='italic underline'>"{query}"</span>
+    Maaf, belum ada yang memenuhi kriteria pencarian Anda. Silahkan mencoba lagi
+    dengan kata kunci yang berbeda.
   </p>
-  <hr />
-
-  <List posts={result.map(({ item }) => item)} />
+  <SearchBar value={query} />
 </Fragment>
