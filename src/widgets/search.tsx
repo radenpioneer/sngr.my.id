@@ -5,7 +5,7 @@ const SearchBar: FC<SearchProps> = ({ value }) => {
   const [searchValue, setSearchValue] = useState(value)
 
   return (
-    <form className='flex gap-1' action='/search' method='get'>
+    <form className='flex gap-1 font-sans' action='/search' method='get'>
       <input
         type='search'
         className='min-w-0 flex-1'
@@ -13,11 +13,11 @@ const SearchBar: FC<SearchProps> = ({ value }) => {
         id='searchBar'
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        aria-label='Pencarian'
+        aria-label='Cari'
       />
       <button
         type='submit'
-        className='bg-zinc-400 px-4 py-1 disabled:opacity-[.5]'
+        className='bg-zinc-400 px-4 disabled:opacity-[.5]'
         disabled={!searchValue}
       >
         Cari

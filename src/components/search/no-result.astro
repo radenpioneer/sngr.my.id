@@ -1,0 +1,18 @@
+---
+import SearchBar from '~/widgets/search.astro'
+
+interface Props {
+  query?: string
+}
+
+const { query } = Astro.props
+---
+
+<Fragment>
+  <h2>Tidak menemukan hasil.</h2>
+  <p>
+    Maaf, belum ada yang memenuhi kriteria pencarian Anda. Silahkan mencoba lagi
+    dengan kata kunci yang berbeda.
+  </p>
+  <SearchBar value={query} />
+</Fragment>
