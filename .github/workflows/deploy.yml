@@ -63,6 +63,8 @@ jobs:
         with:
           configPath: './.lighthouserc.json'
           temporaryPublicStorage: true
+          uploadArtifacts: true
+          runs: 3
 
   deploy:
     name: Deploy to Cloudflare Pages
