@@ -76,12 +76,12 @@ jobs:
           sparse-checkout: |
             .bun-version
           sparse-checkout-cone-mode: false
-          
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
           bun-version-file: .bun-version
-        
+
       - name: Get Site Artifact
         uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
