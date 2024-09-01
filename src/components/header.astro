@@ -37,12 +37,12 @@ const menu = await transformMenu(menuData)
     />
     {
       (
-        <ul class='flex bg-zinc-950 px-4 text-zinc-400 overflow-x-auto'>
+        <ul class='flex overflow-x-auto bg-zinc-950 px-4 text-zinc-400'>
           {menu.map(async (item) => {
             return (
               <li
                 class:list={[
-                  'px-2 py-1 text-sm hover:bg-zinc-700 md:text-base',
+                  'text-nowrap px-2 py-1 text-sm hover:bg-zinc-700 md:text-base',
                   { 'text-zinc-100': item.url === Astro.url.pathname }
                 ]}
               >
