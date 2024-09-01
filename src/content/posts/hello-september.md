@@ -2,12 +2,11 @@
 title: Hello September!
 date: 2024-09-01
 subtitle: >-
-  Di Catatan Mingguan pertama ini, mari kita sedikit mereview apa yang terjadi
-  sebulan ke belakang.
+  Catatan Mingguan #1: di Catatan Mingguan pertama ini, kita sedikit kilas balik
+  bulan Agustus.
 description: >-
-  Catatan Mingguan #1, tentang peristiwa yang terjdi selama bulan Agustus:
-  Menghadiri pernikahan keluarga di Bali, serta menghidupkan gerakan kepemudaan
-  di Kotim.
+  Catatan Mingguan #1, kilas balik bulan Agustus: Menghadiri pernikahan keluarga
+  di Bali, serta menghidupkan gerakan kepemudaan di Kotim.
 tags:
   - name: Catatan Mingguan
     slug: catatan-mingguan
@@ -27,6 +26,8 @@ tags:
     slug: cipayung-plus
   - name: Pilkada 2024
     slug: pilkada-2024
+  - name: Nusantara Baru Indonesia Maju
+    slug: nusantara-baru-indonesia-maju
 lang: id
 draft: false
 image: ~/assets/posts/hello-september/image.png

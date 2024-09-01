@@ -5,7 +5,12 @@ import OGTags from '~/components/og/tags.astro'
 import { getCollection, getEntry } from 'astro:content'
 
 const site = await getEntry('site', 'site')
-const posts = await getCollection('posts', (post) => !post.data.draft)
+const posts = await getCollection(
+  'posts',
+  (post) =>
+    !post.data.draft &&
+    !post.data.tags?.some((tag) => tag.slug === 'catatan-mingguan')
+)
 ---
 
 <DoubleColumnLayout>

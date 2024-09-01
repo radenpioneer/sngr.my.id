@@ -11,6 +11,13 @@
       }
     },
     {
+      "discriminant": "link",
+      "value": {
+        "title": "Catatan Mingguan",
+        "url": "/tags/catatan-mingguan/"
+      }
+    },
+    {
       "discriminant": "page",
       "value": "about"
     },
