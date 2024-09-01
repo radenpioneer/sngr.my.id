@@ -3,7 +3,7 @@ import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
 import SEO, { type Props as SEOProps } from '~/components/seo.astro'
 import Header, { type Props as HeaderProps } from '~/components/header.astro'
 import Footer from '~/components/footer.astro'
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions'
 import { getEntry } from 'astro:content'
 import { getImage } from 'astro:assets'
 import '@fontsource-variable/inter'
@@ -26,6 +26,7 @@ const preloadHeaderImage = await getImage({
 <BaseLayout
   class='flex min-h-screen flex-col bg-zinc-200 font-body text-zinc-950 xl:py-8'
   lang={lang || site.data.lang}
+  transition:animate='none'
   {...props}
 >
   {/* body */}
