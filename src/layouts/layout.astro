@@ -3,6 +3,7 @@ import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
 import SEO, { type Props as SEOProps } from '~/components/seo.astro'
 import Header, { type Props as HeaderProps } from '~/components/header.astro'
 import Footer from '~/components/footer.astro'
+import { ViewTransitions } from 'astro:transitions';
 import { getEntry } from 'astro:content'
 import { getImage } from 'astro:assets'
 import '@fontsource-variable/inter'
@@ -35,6 +36,7 @@ const preloadHeaderImage = await getImage({
   {/* head */}
   <Fragment slot='head'>
     <SEO title={title} description={description} site={site} />
+    <ViewTransitions />
     {
       !image && (
         <link
