@@ -21,7 +21,7 @@ const { posts, class: className, ...props } = Astro.props
       .map((post) => (
         <Article
           title={post.data.title}
-          link={`/posts/${post.slug}`}
+          link={`/posts/${post.slug}/`}
           type='card'
         >
           <ArticleDate
