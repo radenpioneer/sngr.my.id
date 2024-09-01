@@ -44,43 +44,52 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Get .lighthouserc.json
+      - name: Get configuration files
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           sparse-checkout: |
-            .lighthouserc.json
+            wrangler.toml
           sparse-checkout-cone-mode: false
 
-      - name: Get Site Artifact
+      - name: Setup Node
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
+
+      - name: Install necessary tools
+        run: npm install --global wrangler @unlighthouse/cli puppeteer
+
+      - name: Get Built Site
         uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
           name: build-files
           path: dist
 
-      - name: Test with Lighthouse CI
-        uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # v12
+      - name: Test with Lighthouse
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          npx wrangler pages dev &
+          npx unlighthouse-ci --site http://localhost:8788 --build-static --router-prefix __unlighthouse
         continue-on-error: true
+
+      - name: Upload Lighthouse Result
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4
         with:
-          configPath: './.lighthouserc.json'
-          temporaryPublicStorage: true
-          runs: 3
+          name: lighthouse-result
+          path: '.unlighthouse'
+          retention-days: 1
 
   deploy:
     name: Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Get .bun-version
+      - name: Get config files
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           sparse-checkout: |
-            .bun-version
+            wrangler.toml
           sparse-checkout-cone-mode: false
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
-        with:
-          bun-version-file: .bun-version
 
       - name: Get Site Artifact
         uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
@@ -93,5 +102,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          packageManager: bun
           command: pages deploy dist --project-name=sngr-my-id
