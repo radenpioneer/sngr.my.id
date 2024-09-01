@@ -7,7 +7,7 @@ export const transformMenu = async (menu: CollectionEntry<'menu'>) => {
         const page = await getEntry('pages', item.value.slug)
         return {
           title: page.data.title,
-          url: `/${page.slug}`
+          url: `/${page.slug}/`
         }
       }
       return item.value

@@ -15,7 +15,7 @@ const { tags = [], ...props } = Astro.props
     {
       tags.map((tag, _i, arr) => (
         <>
-          <a class='underline' href={`/tags/${tag.slug}`}>
+          <a class='underline' href={`/tags/${tag.slug}/`}>
             {tag.name}
           </a>
           {_i < arr.length - 1 && '/'}
