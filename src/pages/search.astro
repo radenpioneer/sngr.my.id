@@ -17,7 +17,8 @@ const fuse = new Fuse(posts, {
     'data.description',
     'data.tags.name'
   ],
-  ignoreLocation: true
+  ignoreLocation: true,
+  threshold: 0.25
 })
 
 const query = Astro.url.searchParams.get('q')

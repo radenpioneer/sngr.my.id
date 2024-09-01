@@ -11,8 +11,7 @@ module.exports = {
           'system-ui',
           'Arial',
           'sans-serif'
-        ],
-        article: ['"Crimson Pro Variable"', 'ui-serif', 'sans-serif']
+        ]
       }
     }
   },
