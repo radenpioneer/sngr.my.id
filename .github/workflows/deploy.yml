@@ -69,7 +69,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           npx wrangler pages dev &
-          npx unlighthouse-ci --site http://localhost:8788 --build-static --router-prefix __unlighthouse
+          npx unlighthouse-ci --site http://localhost:8788 --build-static --router-prefix __lighthouse
         continue-on-error: true
 
       - name: Upload Lighthouse Result
@@ -96,6 +96,12 @@ jobs:
         with:
           name: build-files
           path: dist
+
+      - name: Get Lighthouse results
+        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
+        with:
+          name: build-files
+          path: dist/__lighthouse
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@f84a562284fc78278ff9052435d9526f9c718361 # v3
