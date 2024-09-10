@@ -15,11 +15,14 @@ const title = 'Catatan Mingguan'
   <h2 class='text-lg font-bold'>{title}</h2>
   <ul class='flex list-inside list-disc flex-col gap-y-1'>
     {
-      posts.slice(0, 5).map((post) => (
-        <li class='text-sm hover:underline'>
-          <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
-        </li>
-      ))
+      posts
+        .slice(0, 5)
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+        .map((post) => (
+          <li class='text-sm hover:underline'>
+            <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
+          </li>
+        ))
     }
   </ul>
 </div>

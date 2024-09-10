@@ -12,7 +12,9 @@ export const getStaticPaths = (async () => {
     ...new Set(allPosts.map((post) => post.data.tags || []).flat())
   ]
   return allTags.map((tag) => {
-    const posts = allPosts.filter((post) => post.data.tags?.includes(tag))
+    const posts = allPosts.filter((post) =>
+      post.data.tags?.some((t) => t.slug === tag.slug)
+    )
     return {
       params: { tag: tag.slug },
       props: { tag, posts }
