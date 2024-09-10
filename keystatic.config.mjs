@@ -16,6 +16,7 @@ export default config({
       path: 'src/content/posts/*',
       format: { contentField: 'content' },
       entryLayout: 'content',
+      columns: ['title', 'date'],
       schema: {
         title: fields.slug({
           name: {
@@ -119,6 +120,7 @@ export default config({
       path: 'src/content/pages/*',
       format: { contentField: 'content' },
       entryLayout: 'content',
+      columns: ['title'],
       schema: {
         title: fields.slug({
           name: {
@@ -164,6 +166,7 @@ export default config({
       slugField: 'title',
       path: 'src/content/menu/*',
       format: 'json',
+      columns: ['title'],
       schema: {
         $schema: fields.ignored(),
         title: fields.slug({
