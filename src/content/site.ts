@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content'
 
 export const site = defineCollection({
-  type: 'content',
+  type: 'data',
   schema: ({ image }) =>
     z.object({
       title: z.string().max(64),
