@@ -18,6 +18,13 @@
       }
     },
     {
+      "discriminant": "link",
+      "value": {
+        "title": "Arsip",
+        "url": "/tags/arsip/"
+      }
+    },
+    {
       "discriminant": "page",
       "value": "about"
     },

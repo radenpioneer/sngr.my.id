@@ -29,4 +29,4 @@ pnpm-debug.log*
 
 # Content Collections
 src/content/*
-!src/content/config.ts
+!src/content/*.ts

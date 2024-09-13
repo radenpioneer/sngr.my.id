@@ -16,7 +16,7 @@ export default config({
       path: 'src/content/posts/*',
       format: { contentField: 'content' },
       entryLayout: 'content',
-      columns: ['title', 'date'],
+      columns: ['title', 'date', 'draft'],
       schema: {
         title: fields.slug({
           name: {
