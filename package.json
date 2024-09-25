@@ -24,7 +24,7 @@
     "@astrojs/tailwind": "5.1.1",
     "@fontsource-variable/inter": "5.0.21",
     "@keystatic/astro": "5.0.0",
-    "@keystatic/core": "0.5.35",
+    "@keystatic/core": "0.5.36",
     "astro": "4.15.8",
     "fuse.js": "7.0.0"
   },
