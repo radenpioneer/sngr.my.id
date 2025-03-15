@@ -38,7 +38,7 @@
     "@vite-pwa/assets-generator": "0.2.6",
     "concurrently": "8.2.2",
     "marked": "14.1.4",
-    "prettier": "3.3.3",
+    "prettier": "3.5.3",
     "prettier-config-standard": "7.0.0",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.11",
