@@ -35,7 +35,7 @@
     "@tailwindcss/typography": "0.5.15",
     "@types/react": "18.3.20",
     "@types/react-dom": "18.3.6",
-    "@vite-pwa/assets-generator": "0.2.6",
+    "@vite-pwa/assets-generator": "1.0.0",
     "concurrently": "8.2.2",
     "marked": "14.1.4",
     "prettier": "3.5.3",
