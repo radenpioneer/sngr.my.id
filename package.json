@@ -37,7 +37,7 @@
     "@types/react-dom": "18.3.7",
     "@vite-pwa/assets-generator": "0.2.6",
     "concurrently": "8.2.2",
-    "marked": "14.1.4",
+    "marked": "15.0.12",
     "prettier": "3.6.0",
     "prettier-config-standard": "7.0.0",
     "prettier-plugin-astro": "0.14.1",
